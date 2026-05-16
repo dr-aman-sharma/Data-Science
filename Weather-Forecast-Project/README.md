@@ -1,39 +1,11 @@
 # Wind Forecast Bias Correction Using Machine Learning
 
-The objective of this project was to improve raw wind forecasts using a machine learning based correction model. The idea was to learn the systematic forecast bias by comparing historical forecasts with ERA5 reanalysis data, and then use this learned bias to generate corrected wind predictions. The study was performed across multiple Indian locations belonging to different terrain categories in order to examine whether forecast error depends on terrain and season. I selected 10 locations across 5 terrain categories. These were, coastal (Mumbai, Chennai), mountaineous (Leh, Shimla), deserts (Jaisalmer, Bikaner), plains (Delhi, Lucknow), and tropical (Kochi, Guwahati).
-
-The locations were chosen intentionally to expose the model to different atmospheric and terrain conditions.
-
-For example:
-- deserts experience strong thermal turbulence,
-- mountain regions have terrain-induced flow effects,
-- coastal regions are influenced by land-sea interactions,
-- tropical regions experience high seasonal variability.
-
----
+The objective of this project was to improve raw wind forecasts using a machine learning based correction model. The idea was to learn the systematic forecast bias by comparing historical forecasts with ERA5 reanalysis data, and then use this learned bias to generate corrected wind predictions. The study was performed across multiple Indian locations belonging to different terrain categories in order to examine whether forecast error depends on terrain and season. I selected 10 locations across 5 terrain categories. These were, coastal (Mumbai, Chennai), mountaineous (Leh, Shimla), deserts (Jaisalmer, Bikaner), plains (Delhi, Lucknow), and tropical (Kochi, Guwahati). The locations were chosen intentionally to expose the model to different atmospheric and terrain conditions, for example, deserts experience strong thermal turbulence, mountain regions have terrain-induced flow effects, coastal regions are influenced by land-sea interactions, and tropical regions experience high seasonal variability.
 
 # Data Collection
 
-Data was collected using Open-Meteo APIs.
+Data was collected using Open-Meteo APIs. Two separate datasets were used: historical Forecast API which was used as the raw forecast source, and historical Weather API (ERA5 Reanalysis) which was used as the reference / ground truth dataset. Hourly data was collected for wind speed at 10 m, and wind direction at 10 m. Time period was chosen to be 1 January 2025 to 31 December 2025. All timestamps were aligned in GMT+0 to avoid timezone mismatch issues.
 
-Two separate datasets were used:
-
-1. Historical Forecast API
-   Used as the raw forecast source.
-
-2. Historical Weather API (ERA5 Reanalysis)
-   Used as the reference / ground truth dataset.
-
-Hourly data was collected for:
-- wind speed at 10 m
-- wind direction at 10 m
-
-Time period:
-- 1 January 2025 to 31 December 2025
-
-All timestamps were aligned in GMT+0 to avoid timezone mismatch issues.
-
----
 
 # Data Preparation
 
