@@ -7,53 +7,15 @@ The objective of this project was to improve raw wind forecasts using a machine 
 Data was collected using Open-Meteo APIs. Two separate datasets were used: historical Forecast API which was used as the raw forecast source, and historical Weather API (ERA5 Reanalysis) which was used as the reference / ground truth dataset. Hourly data was collected for wind speed at 10 m, and wind direction at 10 m. Time period was chosen to be 1 January 2025 to 31 December 2025. All timestamps were aligned in GMT+0 to avoid timezone mismatch issues.
 
 
-# Data Preparation
+# Data Preparation 
 
-For each location:
-- forecast data and ERA5 data were merged using timestamp matching,
-- forecast bias was computed as:
-
-delta = actual wind speed - forecast wind speed
-
-The correction model was trained to predict this residual error.
-
-Terrain labels were also added manually for each location.
-
----
+For each location forecast data and ERA5 data were merged using timestamp matching. Forecast bias was computed as delta = actual wind speed - forecast wind speed. The correction model was trained to predict this residual error. Terrain labels were also added manually for each location.
 
 # Feature Engineering
 
-The following features were used for training:
+The following features were used for training: forecast wind speed, forecast wind direction, time and terrain. Since wind direction is circular, I encoded it using sine(direction) and cosine(direction), instead of directly using the angle. Time features were encoded to capture daily and seasonal cycles as "hour_sin", "hour_cos", "month_sin", "month_cos".
+Terrain features included were coastal, desert, mountain, plains, and tropical. Terrain type was one-hot encoded.
 
-### Forecast Variables
-- forecast wind speed
-- forecast wind direction
-
-### Wind Direction Encoding
-Since wind direction is circular, I encoded it using:
-- sine(direction)
-- cosine(direction)
-
-instead of directly using the angle.
-
-### Time Features
-To capture daily and seasonal cycles:
-- hour_sin
-- hour_cos
-- month_sin
-- month_cos
-
-were included.
-
-### Terrain Features
-Terrain type was one-hot encoded into:
-- coastal
-- desert
-- mountain
-- plains
-- tropical
-
----
 
 # Model Used
 
