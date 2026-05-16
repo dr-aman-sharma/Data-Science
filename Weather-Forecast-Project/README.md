@@ -24,19 +24,13 @@ Instead of random splitting, I used a time-based split. I trained for January to
 
 # Results
 
-## Overall Performance
-
 | Metric | Raw Forecast | Corrected Forecast |
 |---|---|---|
 | RMSE | 3.27 | 2.33 |
 | MAE | 2.58 | 1.77 |
 | Bias | -1.16 | 0.15 |
 
-The correction model significantly reduced forecast error and almost removed the systematic negative bias present in the raw forecasts.
-
----
-
-# Terrain Dependence Analysis
+The correction model significantly reduced forecast error
 
 Forecast bias clearly depended on terrain type.
 
@@ -48,32 +42,11 @@ Forecast bias clearly depended on terrain type.
 | Plains | 3.04 | 2.05 |
 | Tropical | 2.88 | 2.14 |
 
-### Observations
+Observations: 
 
-- Desert regions had the highest forecast error.
-- Mountain regions showed the strongest improvement after correction.
-- Coastal and tropical regions remained relatively harder due to more complex local atmospheric behaviour.
+Desert regions had the highest forecast error. Mountain regions showed the strongest improvement after correction, and coastal and tropical regions remained relatively harder due to more complex local atmospheric behaviour. This suggests that terrain has a strong influence on forecast bias.
 
-This suggests that terrain has a strong influence on forecast bias.
-
----
-
-# Temporal Dependence Analysis
-
-The monthly RMSE analysis showed a clear seasonal dependence.
-
-Main observations:
-- Raw forecast errors increased during mid-year months.
-- The highest errors appeared around June–August.
-- The correction model consistently reduced error across all seasons.
-
-This behaviour is physically reasonable because summer and monsoon periods are associated with stronger atmospheric instability and higher wind variability.
-
-The corrected forecast remained much more stable across seasons compared to the raw forecast.
-
----
-
-# Feature Importance
+The monthly RMSE analysis (in the notebook) showed a clear seasonal dependence: raw forecast errors increased during mid-year months, the highest errors appeared around June–August, and the correction model consistently reduced error across all seasons. This behaviour is physically reasonable because summer and monsoon periods are associated with stronger atmospheric instability and higher wind variability. The corrected forecast was much more stable across seasons compared to the raw forecast.
 
 The most important features learned by the model were:
 
@@ -84,74 +57,23 @@ The most important features learned by the model were:
 | dir_cos | 0.115 |
 | dir_sin | 0.107 |
 
-This indicates that:
-- forecast magnitude itself strongly influences forecast bias,
-- wind direction contains important residual information,
-- desert terrain contributes strongly to systematic forecast error.
+This indicates, that forecast magnitude itself strongly influences forecast bias. We also observe that desert terrain contributes strongly to systematic forecast error, and wind direction contains important residual information, 
 
----
 
-# Operational Deployment Discussion
+# Discussion
 
-If deploying this model on an autonomous drone flying across mixed terrain, I would want additional information such as:
+If deploying this model on an autonomous drone flying across mixed terrain, I would want to add additional information such as: land-use information, higher-resolution weather forecasts, pressure and temperature information. I would also likely retrain the model continuously using incoming flight data. An estimate of uncertainty is missing which i would like to add for safer operational deployment.
 
-- elevation and terrain slope,
-- land-use information,
-- higher-resolution weather forecasts,
-- pressure and temperature fields,
-- real-time onboard sensor measurements,
-- forecast lead time,
-- wind gust forecasts.
+Assumptions: ERA5 reanalysis was treated as ground truth. I assumed Forecast and ERA5 timestamps to be correctly aligned after timezone normalization. Terrain was oversimplified into discrete categories.
 
-I would also likely:
-- retrain models continuously using incoming flight data,
-- use separate models for different terrain regions,
-- incorporate spatial information from nearby locations,
-- estimate uncertainty for safer operational deployment.
+Limitations: I used only one year of data. Only 10 locations were included. Extreme wind events were difficult to predict. I did not have time to implement wind direction correction.
 
----
-
-# Assumptions
-
-Some assumptions made during this work:
-
-- ERA5 reanalysis was treated as ground truth.
-- Forecast and ERA5 timestamps were assumed correctly aligned after timezone normalization.
-- Terrain was simplified into discrete categories.
-- Wind speed correction was modeled independently at each hourly timestep.
-
----
-
-# Limitations
-
-Some limitations of the current approach are:
-
-- only one year of data was used,
-- only 10 locations were included,
-- extreme wind events remain difficult to predict,
-- wind direction correction was not fully implemented,
-- spatial relationships between locations were not explicitly modeled.
-
----
 
 # What I Would Do With More Time
 
-Given more time, I would:
+Given more time, I would implement full wind direction correction. I would use additional meteorological variables, test gradient boosting / XGBoost models, study forecast lead-time dependence, include uncertainty estimation, evaluate performance during extreme weather events.
 
-- implement full wind direction correction,
-- use additional meteorological variables,
-- test gradient boosting / XGBoost models,
-- study forecast lead-time dependence,
-- include uncertainty estimation,
-- incorporate spatial and topographic information,
-- evaluate performance during extreme weather events.
-
----
 
 # Conclusion
 
-This project showed that machine learning based residual correction can significantly improve wind forecast quality across multiple terrain types and seasons.
-
-The model reduced RMSE and MAE consistently while also reducing systematic forecast bias. The analysis also showed that both terrain and season strongly affect forecast performance.
-
-Overall, the results suggest that terrain-aware ML post-processing can be useful for improving operational wind forecasting systems.
+This project showed that a simple machine learning based residual correction can significantly improve wind forecast quality across multiple terrain types and seasons. The model reduced RMSE and MAE consistently. The analysis also showed that both terrain and season strongly affect forecast performance. Overall, the results suggest that terrain-aware ML post-processing can be useful for improving operational wind forecasting systems.
