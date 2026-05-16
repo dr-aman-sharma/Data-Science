@@ -66,7 +66,7 @@ Limitations: I used only one year of data. Only 10 locations were included. Extr
 
 # What I Would Do With More Time
 
-Given more time, I would implement full wind direction correction. I would use additional meteorological variables, test gradient boosting / XGBoost models, study forecast lead-time dependence, include uncertainty estimation, evaluate performance during extreme weather events.
+Given more time, I would implement full wind direction correction. I would use additional meteorological variables, test gradient boosting / XGBoost models, study forecast lead-time dependence, include uncertainty estimation, and evaluate performance during extreme weather events.
 
 
 # Conclusion
