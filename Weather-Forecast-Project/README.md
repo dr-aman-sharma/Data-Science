@@ -14,9 +14,7 @@ Terrain features included were coastal, desert, mountain, plains, and tropical. 
 
 # Model Used and Train-Test Split
 
-I used a Random Forest Regressor for the correction model. Reasons for choosing it were that it works well on nonlinear tabular data, handles mixed feature types naturally and requires minimal preprocessing which was needed for the shortness of time. 
-
-Instead of random splitting, I used a time-based split. I trained for January to October 2025 and tested for November to December 2025.
+I used a Random Forest Regressor for the correction model. Reasons for choosing it were that it works well on nonlinear tabular data, handles mixed feature types naturally and requires minimal preprocessing which was needed for the shortness of time. Instead of random splitting, I used a time-based split. I trained for January to October 2025 and tested for November to December 2025.
 
 
 # Results
