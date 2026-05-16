@@ -7,41 +7,20 @@ The objective of this project was to improve raw wind forecasts using a machine 
 Data was collected using Open-Meteo APIs. Two separate datasets were used: historical Forecast API which was used as the raw forecast source, and historical Weather API (ERA5 Reanalysis) which was used as the reference / ground truth dataset. Hourly data was collected for wind speed at 10 m, and wind direction at 10 m. Time period was chosen to be 1 January 2025 to 31 December 2025. All timestamps were aligned in GMT+0 to avoid timezone mismatch issues.
 
 
-# Data Preparation 
+# Data Preparation and Feature Engineering
 
 For each location forecast data and ERA5 data were merged using timestamp matching. Forecast bias was computed as delta = actual wind speed - forecast wind speed. The correction model was trained to predict this residual error. Terrain labels were also added manually for each location.
-
-# Feature Engineering
 
 The following features were used for training: forecast wind speed, forecast wind direction, time and terrain. Since wind direction is circular, I encoded it using sine(direction) and cosine(direction), instead of directly using the angle. Time features were encoded to capture daily and seasonal cycles as "hour_sin", "hour_cos", "month_sin", "month_cos".
 Terrain features included were coastal, desert, mountain, plains, and tropical. Terrain type was one-hot encoded.
 
 
-# Model Used
+# Model Used and Train-Test Split
 
-I used a Random Forest Regressor for the correction model.
+I used a Random Forest Regressor for the correction model. Reasons for choosing it were that it works well on nonlinear tabular data, handles mixed feature types naturally and requires minimal preprocessing which was needed for the shortness of time. 
 
-Reasons for choosing it:
-- works well on nonlinear tabular data,
-- handles mixed feature types naturally,
-- requires minimal preprocessing,
-- relatively robust and interpretable.
+Instead of random splitting, I used a time-based split. I trained for January to October 2025 and tested for November to December 2025.
 
----
-
-# Train-Test Split
-
-Instead of random splitting, I used a time-based split.
-
-Training:
-- January to October 2025
-
-Testing:
-- November to December 2025
-
-This setup better simulates a real forecasting scenario and avoids temporal leakage.
-
----
 
 # Results
 
