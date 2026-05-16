@@ -52,7 +52,7 @@ The most important features learned by the model were:
 | dir_cos | 0.115 |
 | dir_sin | 0.107 |
 
-This indicates, that forecast magnitude itself strongly influences forecast bias. We also observe that desert terrain contributes strongly to systematic forecast error, and wind direction contains important residual information, 
+This indicates, that forecast magnitude itself strongly influences forecast bias. We also observe that desert terrain contributes strongly to systematic forecast error. And wind direction contains important residual information. 
 
 
 # Discussion
