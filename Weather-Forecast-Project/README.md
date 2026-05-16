@@ -1,24 +1,6 @@
 # Wind Forecast Bias Correction Using Machine Learning
 
-## Project Overview
-
-The objective of this project was to improve raw wind forecasts using a machine learning based correction model. The idea was to learn the systematic forecast bias by comparing historical forecasts with ERA5 reanalysis data, and then use this learned bias to generate corrected wind predictions.
-
-The study was performed across multiple Indian locations belonging to different terrain categories in order to examine whether forecast error depends on terrain and season.
-
----
-
-# Selected Locations
-
-I selected 10 locations across 5 terrain categories:
-
-| Terrain Type | Locations |
-|---|---|
-| Coastal | Mumbai, Chennai |
-| Mountain | Leh, Shimla |
-| Desert | Jaisalmer, Bikaner |
-| Plains | Delhi, Lucknow |
-| Tropical | Kochi, Guwahati |
+The objective of this project was to improve raw wind forecasts using a machine learning based correction model. The idea was to learn the systematic forecast bias by comparing historical forecasts with ERA5 reanalysis data, and then use this learned bias to generate corrected wind predictions. The study was performed across multiple Indian locations belonging to different terrain categories in order to examine whether forecast error depends on terrain and season. I selected 10 locations across 5 terrain categories. These were, coastal (Mumbai, Chennai), mountaineous (Leh, Shimla), deserts (Jaisalmer, Bikaner), plains (Delhi, Lucknow), and tropical (Kochi, Guwahati).
 
 The locations were chosen intentionally to expose the model to different atmospheric and terrain conditions.
 
