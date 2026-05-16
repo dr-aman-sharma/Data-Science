@@ -2,12 +2,9 @@
 
 The objective of this project was to improve raw wind forecasts using a machine learning based correction model. The idea was to learn the systematic forecast bias by comparing historical forecasts with ERA5 reanalysis data, and then use this learned bias to generate corrected wind predictions. The study was performed across multiple Indian locations belonging to different terrain categories in order to examine whether forecast error depends on terrain and season. I selected 10 locations across 5 terrain categories. These were, coastal (Mumbai, Chennai), mountaineous (Leh, Shimla), deserts (Jaisalmer, Bikaner), plains (Delhi, Lucknow), and tropical (Kochi, Guwahati). The locations were chosen intentionally to expose the model to different atmospheric and terrain conditions, for example, deserts experience strong thermal turbulence, mountain regions have terrain-induced flow effects, coastal regions are influenced by land-sea interactions, and tropical regions experience high seasonal variability.
 
-# Data Collection
+# Data Collection, Preparation and Feature Engineering
 
 Data was collected using Open-Meteo APIs. Two separate datasets were used: historical Forecast API which was used as the raw forecast source, and historical Weather API (ERA5 Reanalysis) which was used as the reference / ground truth dataset. Hourly data was collected for wind speed at 10 m, and wind direction at 10 m. Time period was chosen to be 1 January 2025 to 31 December 2025. All timestamps were aligned in GMT+0 to avoid timezone mismatch issues.
-
-
-# Data Preparation and Feature Engineering
 
 For each location forecast data and ERA5 data were merged using timestamp matching. Forecast bias was computed as delta = actual wind speed - forecast wind speed. The correction model was trained to predict this residual error. Terrain labels were also added manually for each location.
 
