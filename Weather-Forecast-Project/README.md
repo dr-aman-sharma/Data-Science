@@ -41,7 +41,7 @@ Observations:
 
 Desert regions had the highest forecast error. Mountain regions showed the strongest improvement after correction. Coastal and tropical regions remained relatively harder due to more complex local atmospheric behaviour. This suggests that terrain has a strong influence on forecast bias.
 
-The monthly RMSE analysis (in the notebook) showed a clear seasonal dependence. Raw forecast errors increased during mid-year months. The highest errors appeared around June–August, and the correction model consistently reduced error across all seasons. This behaviour is physically reasonable because summer and monsoon periods are associated with stronger atmospheric instability and higher wind variability. The corrected forecast was much more stable across seasons compared to the raw forecast.
+The monthly RMSE analysis (in the notebook) showed a clear seasonal dependence. Raw forecast errors increased during mid-year months. The highest errors appeared around June–August. The correction model consistently reduced error across all seasons. This behaviour is physically reasonable because summer and monsoon periods are associated with stronger atmospheric instability and higher wind variability. The corrected forecast was much more stable across seasons compared to the raw forecast.
 
 The most important features learned by the model were:
 
