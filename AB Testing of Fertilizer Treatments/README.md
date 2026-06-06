@@ -36,7 +36,9 @@ Alternative Hypothesis (H1): Nitrogen fertilizer increases average corn yield.
 A Welch two-sample t-test was used because the treatment and control groups had unequal sample sizes and potentially different variances.
 
 Results:
+
 t-statistic = 14.20
+
 p-value = 7.10 × 10^-26
 
 #### Interpretation
