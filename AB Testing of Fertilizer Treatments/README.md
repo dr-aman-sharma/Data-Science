@@ -18,7 +18,9 @@ The dataset contained missing yield values corresponding to treatment combinatio
 The question I asked was does nitrogen fertilizer significantly increase corn yield?
 
 Control Group: Plots receiving no nitrogen, N = 0.
+
 Treatment Group: Plots receiving any amount of nitrogen N > 0.
+
 Outcome Variable: Corn yield
 
 #### Exploratory Data Analysis
