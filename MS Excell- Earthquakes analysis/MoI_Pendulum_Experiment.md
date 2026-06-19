@@ -30,7 +30,6 @@ Our fully-built hexacopter contains:
 - **Two cameras:**
   - a **downward-facing ZR10** camera fixed to the body frame
   - a **camera on a stabilised gimbal**
-- A **LiDAR**
 - **Six propellers** (Tarot 1655, 16-inch)
 
 How the SDF is built (this is the whole key to the procedure): the drone isn't one
