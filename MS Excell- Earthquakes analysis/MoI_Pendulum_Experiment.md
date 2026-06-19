@@ -18,7 +18,7 @@ We measure three values — **Ixx (roll), Iyy (pitch), Izz (yaw)**.
 
 ---
 
-## 2. What's On the Drone
+## 2. What is On the Drone
 
 Our fully-built hexacopter contains:
 
@@ -34,7 +34,7 @@ Our fully-built hexacopter contains:
 - **Six propellers** (Tarot 1655, 16-inch)
 
 How the SDF is built (this is the whole key to the procedure): the drone isn't one
-solid block. It's split into separate "links" — body, each rotor, the flight
+solid block. It is split into separate "links" — body, each rotor, the flight
 controller, each camera, etc. Every link carries its own mass and its own inertia,
 and Gazebo automatically adds them all together to get the inertia of the whole
 drone. So our job is just to make sure **each part is counted once, in the right
@@ -54,10 +54,10 @@ The deciding question for each part is simple:
 
 - **If YES** → its link must stay in the file, so we **take the physical part OFF
   the drone** during the test (otherwise we'd count it twice).
-- **If NO** → it's just dead weight in the file, so we **leave it ON the drone**,
+- **If NO** → it is just dead weight in the file, so we **leave it ON the drone**,
   measure it, and fold it into `base_link`.
 
-Here's how every part falls out:
+Here is how every part falls out:
 
 ### Take OFF the drone for the test (their links stay in the SDF)
 
@@ -126,7 +126,7 @@ Run **both** tests in **each** of the three orientations.
 - Measuring tape (for `h` and `D`)
 - Digital spirit level (hang it level — aim for under 1°)
 - A stopwatch — or better, log the **Cube's onboard gyro** and read the period off
-  that (much more accurate; see Remarks)
+  that (much more accurate)
 - A weighing scale
 - Tools to remove the props, the Cube, and both cameras
 
@@ -250,7 +250,7 @@ If that matches what the whole drone weighs on a scale, our bookkeeping is right
   frame is symmetric, so roll and pitch inertia should be nearly equal. If they're
   far apart, suspect a leveling or air-resistance problem in that orientation — not a
   real difference.
-- On the full vehicle, **Izz (yaw) should be the largest** of the three. That's
+- On the full vehicle, **Izz (yaw) should be the largest** of the three. That is
   normal for something wider than it is tall.
 
 If our numbers respect those checks and sit in the right ballpark, we're done.
@@ -288,7 +288,7 @@ design in simulation will actually work on the real drone.
 
 ## 11. Remarks and Recommendations
 
-- **Use the onboard gyro for timing** if we can — it's the single biggest accuracy
+- **Use the onboard gyro for timing** if we can, it is the single biggest accuracy
   win and fixes the main weakness of hand-stopwatch methods.
 - **Repeat each measurement three times** and average. Throw out any run where the
   drone wobbled or a rope slipped.
