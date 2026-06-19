@@ -105,7 +105,7 @@ vertical axis, release, and time the rotation.
 
     I = (m · g · D² · T²) / (16 · π² · h)
 
-The answer is in **kg·m²**. Here `m` is the mass of the thing you hung, and `T` is
+The answer is in **kg·m²**. Here `m` is the mass of the thing we hung, and `T` is
 the torsional period.
 
 The test always measures inertia about the **vertical axis through the middle of the
@@ -119,7 +119,7 @@ Run **both** tests in **each** of the three orientations.
 
 ---
 
-## 5. What You Need
+## 5. What we Need
 
 - A strong overhead beam or frame to hang from
 - Two ropes of equal length
@@ -171,7 +171,7 @@ Run **both** tests in **each** of the three orientations.
 17. Also note the **centre-of-gravity height** of this configuration (roughly where
     the mass balances along the vertical axis).
 
-You'll end with three numbers — **Ixx, Iyy, Izz** — plus the body mass and CG.
+We'll end with three numbers — **Ixx, Iyy, Izz** — plus the body mass and CG.
 
 ---
 
@@ -198,9 +198,9 @@ Do **not** delete the camera links and do **not** put the cameras' mass into
 
 ### Edit 3 — The Jetson folds into the body (no separate link)
 
-The Jetson's mass is already included in the `base_link` mass you weighed in Step A6,
-so it does **not** get its own link. Nothing to add — just make sure it was on the
-drone when you weighed and measured.
+The Jetson's mass is already included in the `base_link` mass we weighed in Step A6,
+so it does **not** get its own link. Nothing to add — just we need to make sure it was on the
+drone when we weighed and measured.
 
 ### Edit 4 — Overwrite the `base_link` inertial block
 
@@ -235,7 +235,7 @@ After the edits, the parts should still add up to the real drone's total weight:
 
     base_link (measured)  +  Cube (0.075)  +  6 rotors (0.150)  +  ZR10  +  gimbal camera  =  full drone mass
 
-If that matches what the whole drone weighs on a scale, your bookkeeping is right.
+If that matches what the whole drone weighs on a scale, our bookkeeping is right.
 
 ---
 
@@ -253,7 +253,7 @@ If that matches what the whole drone weighs on a scale, your bookkeeping is righ
 - On the full vehicle, **Izz (yaw) should be the largest** of the three. That's
   normal for something wider than it is tall.
 
-If your numbers respect those checks and sit in the right ballpark, you're done.
+If our numbers respect those checks and sit in the right ballpark, we're done.
 
 ---
 
@@ -288,7 +288,7 @@ design in simulation will actually work on the real drone.
 
 ## 11. Remarks and Recommendations
 
-- **Use the onboard gyro for timing** if you can — it's the single biggest accuracy
+- **Use the onboard gyro for timing** if we can — it's the single biggest accuracy
   win and fixes the main weakness of hand-stopwatch methods.
 - **Repeat each measurement three times** and average. Throw out any run where the
   drone wobbled or a rope slipped.
@@ -309,5 +309,3 @@ design in simulation will actually work on the real drone.
 - [ ] Mass + inertia + mount position for the ZR10 camera link
 - [ ] Mass + inertia + mount position for the gimbal camera link
 
-*This document is standalone — no other notes needed to run the experiment and update
-the model.*
