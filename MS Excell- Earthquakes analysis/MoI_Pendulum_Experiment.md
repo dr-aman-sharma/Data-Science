@@ -80,9 +80,7 @@ So the thing we actually hang and measure is:
 **frame + battery + Jetson + wiring — with the props, the Cube, and BOTH cameras
 removed.**
 
-(Note: this is a change from an earlier plan where the camera was folded into the
-body. Because the cameras have their own sensors/plugins, they must stay separate,
-so they come OFF for the test instead.)
+
 
 ---
 
