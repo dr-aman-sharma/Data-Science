@@ -10,7 +10,7 @@ The dataset contains 5,410 earthquake records with magnitudes ranging from 2.6 t
 
 ## Dataset
 
-Source: USGS Earthquake Catalog
+Source: USGS Earthquake Catalog (https://earthquake.usgs.gov/earthquakes/search/)
 
 Region: South Asia
 
