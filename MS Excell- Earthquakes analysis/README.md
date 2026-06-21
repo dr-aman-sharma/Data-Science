@@ -70,7 +70,7 @@ Higher magnitude earthquakes were considerably less frequent, with only a small 
 
 This behaviour is consistent with the general observation that small and moderate earthquakes occur much more frequently than large earthquakes.
 
-![Magnitude Histogram](images/magnitude_histogram.png)
+![Magnitude Histogram](Images/magnitude_histogram.png)
 
 ---
 
@@ -82,7 +82,7 @@ Approximately 60% of all recorded events were located within the shallowest dept
 
 A smaller number of earthquakes were observed at intermediate and deep depths.
 
-![Depth Histogram](images/depth_histogram.png)
+![Depth Histogram](Images/depth_histogram.png)
 
 ---
 
@@ -92,7 +92,7 @@ A scatter plot was created to investigate whether deeper earthquakes tend to hav
 
 The results show a weak negative relationship between depth and magnitude. Large earthquakes were observed primarily at shallow depths, while deeper earthquakes generally occurred within a narrower magnitude range.
 
-![Magnitude vs Depth](images/mag_vs_depth.png)
+![Magnitude vs Depth](Images/mag_vs_depth.png)
 
 ---
 
@@ -102,7 +102,7 @@ Monthly earthquake counts were calculated from 2020 to 2025.
 
 The overall level of seismic activity remained relatively stable throughout the study period. Although several months experienced elevated activity, no clear long-term increase or decrease in earthquake occurrence was observed.
 
-![Monthly Earthquake Activity](images/monthly_activity.png)
+![Monthly Earthquake Activity](Images/monthly_activity.png)
 
 ---
 
@@ -119,7 +119,7 @@ Several distinct clusters can be observed across South Asia. These clusters are 
 
 These areas correspond to active plate boundaries and zones of ongoing tectonic deformation.
 
-![Earthquake Map](images/earthquake_map.png)
+![Earthquake Map](Images/earthquake_map.png)
 
 ---
 
