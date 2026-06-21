@@ -14,25 +14,25 @@
 
 ## Magnitude Distribution
 
-![Magnitude Histogram](images/magnitude_histogram.png)
+![Magnitude Histogram](Images/magnitude_histogram.png)
 
 ## Depth Distribution
 
-![Depth Histogram](images/depth_histogram.png)
+![Depth Histogram](Images/depth_histogram.png)
 
 ## Magnitude vs Depth
 
 Correlation coefficient: -0.225
 
-![Magnitude vs Depth](images/mag_vs_depth.png)
+![Magnitude vs Depth](Images/mag_vs_depth.png)
 
 ## Monthly Earthquake Activity
 
-![Time Series](images/monthly_activity.png)
+![Time Series](Images/monthly_activity.png)
 
 ## Geographic Distribution
 
-![Earthquake Map](images/earthquake_map.png)
+![Earthquake Map](Images/earthquake_map.png)
 
 ## Key Findings
 
