@@ -50,9 +50,9 @@ No missing values were found in the primary variables used for the analysis.
 
 | Variable           | Minimum | Maximum | Mean  |
 | ------------------ | ------- | ------- | ----- |
-| Magnitude          | 2.6     | 7.7     | 4.44  |
+| Magnitude          | 2.6     | 7.7     | 4.4  |
 | Depth (km)         | 3.16    | 300.15  | 53.58 |
-| Number of Stations | 5       | 423     | 51.43 |
+| Number of Stations | 5       | 423     | 51 |
 
 A weak negative correlation was observed between earthquake depth and magnitude:
 
